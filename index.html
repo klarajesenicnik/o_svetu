@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+
+<div id="vprasanje">Vprasanje</div>
+<br>
+<button onclick="gumb1()" id="gumb1">Gumb1</button>
+<button onclick="gumb2()" id="gumb2">Gumb2</button>
+<button onclick="gumb3()" id="gumb3">Gumb3</button>
+<button onclick="gumb4()" id="gumb4">Gumb4</button>
+<br>
+<button onclick="zacni()"> zacni</button>
+<br>
+<div id="točke">Točke:</div>
+
+<script>
+    var vprasanja = [" Največja celina je:","Najdaljša reka je:","Najvišji slap je:"];
+    var pravilni_odgovori = [2,0,1];
+    var odgovori = [["Afrika","Evropa","Azija","Amerika"],["Nil","amazonka","Missisipi","Ind"],["Niagarski","Angelov slap","Peričnik","Viktorijini"]];
+
+    var kviz_se_je_ze_zacel = false;
+    var tocke = 0;
+    var trenutno_vprasanje = 0;
+
+
+    function zacni(){
+        document.getElementById("vprasanje").innerHTML = vprasanja[0];
+        kviz_se_je_ze_zacel = true;
+        posodobi_stanje();
+    }
+
+    function gumb1(){
+        console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 0){
+                console.log("pravilno");
+                tocke += 1;
+                trenutno_vprasanje += 1;
+                posodobi_stanje();
+            }
+        }
+    }
+    function gumb2(){
+        console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 1){
+                console.log("pravilno");
+                tocke += 1;
+                trenutno_vprasanje += 1;
+                posodobi_stanje();
+            }
+        }
+    }
+    function gumb3(){
+        console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 2){
+                console.log("pravilno");
+                tocke += 1;
+                trenutno_vprasanje += 1;
+                posodobi_stanje();
+            }
+        }
+    }
+    function gumb4(){
+        console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 3){
+                console.log("pravilno");
+                tocke += 1;
+                trenutno_vprasanje += 1;
+                posodobi_stanje();
+            }
+        }
+    } 
+    function posodobi_stanje(){
+        console.log(tocke);
+        var temp_tocke = tocke.toString();
+        document.getElementById("vprasanje").innerHTML = vprasanja[trenutno_vprasanje];
+        document.getElementById("točke").innerHTML = "Točke: " + tocke;
+        console.log(odgovori[trenutno_vprasanje][0]);
+        document.getElementById("gumb1").innerHTML = odgovori[trenutno_vprasanje][0];
+        document.getElementById("gumb2").innerHTML = odgovori[trenutno_vprasanje][1];
+        document.getElementById("gumb3").innerHTML = odgovori[trenutno_vprasanje][2];
+        document.getElementById("gumb4").innerHTML = odgovori[trenutno_vprasanje][3];
+    }       
+</script>
+
+</body>
+</html>
