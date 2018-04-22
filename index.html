@@ -69,9 +69,9 @@
         }
     }
     function gumb4(){
-        console.log("gumb1 kliknjen");
+        //console.log("gumb1 kliknjen");
         if (kviz_se_je_ze_zacel) {
-            console.log("neki");
+            //console.log("neki");
             if (pravilni_odgovori[trenutno_vprasanje] == 3){
                 console.log("pravilno");
                 tocke += 1;
@@ -81,15 +81,18 @@
         }
     } 
     function posodobi_stanje(){
-        console.log(tocke);
+        //console.log(tocke);
         var temp_tocke = tocke.toString();
-        document.getElementById("vprasanje").innerHTML = vprasanja[trenutno_vprasanje];
+        
         document.getElementById("točke").innerHTML = "Točke: " + tocke;
-        console.log(odgovori[trenutno_vprasanje][0]);
-        document.getElementById("gumb1").innerHTML = odgovori[trenutno_vprasanje][0];
-        document.getElementById("gumb2").innerHTML = odgovori[trenutno_vprasanje][1];
-        document.getElementById("gumb3").innerHTML = odgovori[trenutno_vprasanje][2];
-        document.getElementById("gumb4").innerHTML = odgovori[trenutno_vprasanje][3];
+        //console.log(odgovori[trenutno_vprasanje][0]);
+        if(trenutno_vprasanje != vprasanja.length){
+            document.getElementById("vprasanje").innerHTML = vprasanja[trenutno_vprasanje];
+            document.getElementById("gumb1").innerHTML = odgovori[trenutno_vprasanje][0];
+            document.getElementById("gumb2").innerHTML = odgovori[trenutno_vprasanje][1];
+            document.getElementById("gumb3").innerHTML = odgovori[trenutno_vprasanje][2];
+            document.getElementById("gumb4").innerHTML = odgovori[trenutno_vprasanje][3];
+        }
     }       
 </script>
 
