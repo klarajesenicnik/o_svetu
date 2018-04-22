@@ -5,16 +5,19 @@
 </head>
 <body>
 
-<div id="vprasanje">Vprasanje</div>
+<div id="vprasanje">Tukaj se bodo izpisovala vprašanja</div>
 <br>
-<button onclick="gumb1()" id="gumb1">Gumb1</button>
-<button onclick="gumb2()" id="gumb2">Gumb2</button>
-<button onclick="gumb3()" id="gumb3">Gumb3</button>
-<button onclick="gumb4()" id="gumb4">Gumb4</button>
+<button onclick="gumb1()" id="gumb1">Gumb 1</button>
+<button onclick="gumb2()" id="gumb2">Gumb 2</button>
+<button onclick="gumb3()" id="gumb3">Gumb 3</button>
+<button onclick="gumb4()" id="gumb4">Gumb 4</button>
 <br>
-<button onclick="zacni()"> zacni</button>
+<button onclick="zacni()"> Začni s kvizom</button>
 <br>
 <div id="točke">Točke:</div>
+<br>
+<br>
+<div id="konec"> </div>
 
 <script>
     var vprasanja = [" Največja celina je:","Najdaljša reka je:","Najvišji slap je:"];
@@ -33,39 +36,39 @@
     }
 
     function gumb1(){
-        console.log("gumb1 kliknjen");
+        //console.log("gumb1 kliknjen");
         if (kviz_se_je_ze_zacel) {
             console.log("neki");
             if (pravilni_odgovori[trenutno_vprasanje] == 0){
-                console.log("pravilno");
+                //console.log("pravilno");
                 tocke += 1;
-                trenutno_vprasanje += 1;
-                posodobi_stanje();
             }
+            trenutno_vprasanje += 1;
+            posodobi_stanje();
         }
     }
     function gumb2(){
-        console.log("gumb1 kliknjen");
+        //console.log("gumb1 kliknjen");
         if (kviz_se_je_ze_zacel) {
-            console.log("neki");
+            //console.log("neki");
             if (pravilni_odgovori[trenutno_vprasanje] == 1){
                 console.log("pravilno");
                 tocke += 1;
-                trenutno_vprasanje += 1;
-                posodobi_stanje();
             }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
         }
     }
     function gumb3(){
-        console.log("gumb1 kliknjen");
+        //console.log("gumb1 kliknjen");
         if (kviz_se_je_ze_zacel) {
-            console.log("neki");
+            //console.log("neki");
             if (pravilni_odgovori[trenutno_vprasanje] == 2){
                 console.log("pravilno");
                 tocke += 1;
-                trenutno_vprasanje += 1;
-                posodobi_stanje();
             }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
         }
     }
     function gumb4(){
@@ -75,15 +78,12 @@
             if (pravilni_odgovori[trenutno_vprasanje] == 3){
                 console.log("pravilno");
                 tocke += 1;
-                trenutno_vprasanje += 1;
-                posodobi_stanje();
             }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
         }
     } 
     function posodobi_stanje(){
-        //console.log(tocke);
-        var temp_tocke = tocke.toString();
-        
         document.getElementById("točke").innerHTML = "Točke: " + tocke;
         //console.log(odgovori[trenutno_vprasanje][0]);
         if(trenutno_vprasanje != vprasanja.length){
@@ -92,6 +92,9 @@
             document.getElementById("gumb2").innerHTML = odgovori[trenutno_vprasanje][1];
             document.getElementById("gumb3").innerHTML = odgovori[trenutno_vprasanje][2];
             document.getElementById("gumb4").innerHTML = odgovori[trenutno_vprasanje][3];
+        }
+        if (trenutno_vprasanje == vprasanja.length){
+            document.getElementById("konec").innerHTML = "Bravo. Zaključil si kviz z osvojenimi " + tocke + " točkami."
         }
     }       
 </script>
