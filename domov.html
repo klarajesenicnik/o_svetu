@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE> SVET </TITLE>
+<META NAME="Generator" CONTENT="TextPad 4.6">
+<META NAME="Author" CONTENT="Daša pokliè, Klara Jeseniènik">
+<META NAME="Keywords" CONTENT="Geografija">
+<META NAME="Description" CONTENT="Kontinenti sveta">
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#FF0000" VLINK="#800000" ALINK="#FF00FF" BACKGROUND="?">
+<center><IMG SRC="svet2.jpg" width="500" height="300"></center>
+<font size="5" face="Comic Sans MS">
+
+<TABLE ALIGN="center" BORDER=1 CELLSPACING=0 CELLPADDING=0 WIDTH="1600">
+<TR ALIGN="left" VALIGN="middle">
+	<TD ><a href="domov.html"> <IMG SRC="hiša.jpg" width="150"></a> </TD>
+	<TH><a href="afrika.html"> <img src="afrika.jpg" width="150"></a> </TH>
+	<TH><a href="samerika.html"><img src="samerika.jpg" width="150"></a></TH>
+	<TH><a href="jamerika.html"><img src="jamerika.jpg" width="150"></a></TH>
+	<TH><a href="evropa.html"><img src="evropa.jpg" width="150"></a></TH>
+	<TH><a href="azija.html"><img src="azija.jpg" width="150"></a></TH>
+	<TH><a href="avstralija.html"><img src="avstralija.jpg" width="150"></TH>
+	<TH><a href="antarktika.html"><img src="antarktika.jpg" width="150"></a></TH>
+</TR>
+</TABLE>
+
+<TABLE ALIGN="center" BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="100%">
+<TR ALIGN="left" VALIGN="middle">
+	<TD> <b><font size="8"><center>CARPE DIEM</center></font></b><br><br></br></br> »Carpe diem« oziroma »Užij dan« se glasi eden izmed latinskih pregovorov in mislim,
+	da ta pregovor predstavlja kar najin življenjski moto.
+Sva Daša in Klara: najboljši prijateljici,<br>
+zagreti raziskovalki, perspektivni fotografinji in neutrudljivi izletnici. Z najveèjim veseljem in
+užitkom potujeva po svetu in odkrivava dih jemajoèe razglede in zlate sonène zahode. Odloèili sva se tudi,
+da nekoè skupaj prepotujeva svet in tako, na najboljši možen naèin zaèutiva utrip Zemlje. Pravijo <br>
+sicer, da je življenje na Zemlji drago ampak midve praviva, da imamo zato vsako leto brezplaèno potovanje okoli Sonca.</TD>
+	<TH><center><img src="svet3.jpg" width="600"></center></TH>
+</TR>
+<TR ALIGN="left" VALIGN="middle">
+	<TD> <center><img src="svet4.jpg" width="600"></center> </TD>
+	<TD> Na najini spletni strani, ki sva jo oblikovale pri pouku informatike je zbranih nekaj najbolj zanimivih morda <br>
+	tudi neverjetnih dejstev in ugotovitev o našem planetu. Predstavljenih je vseh sedem celin in njihovih znaèilnosti. Na ta
+	naèin sva združili koristno znanje geografije in informatike ter uživali ob prijetnem »popotovanju« skozi pokrajine. <br>
+Upava, da se boste skozi tukajšnji svet v malem sprehodili polni dobre volje in življenja. Morda se boste tudi kaj novega nauèili. <br>
+Želiva vam, da to znanje dobro izkoristite, morda podelite s katerim izmed znancev in tako pripomorete h kakovostnejšemu življenju na <br>
+našem planetu pa tudi h kakovostnejšemu življenju našega planeta.
+<br></br>
+Za konec pa vam želiva samo še »Carpe diem!« <br></br>
+Daša Pokliè in Klara Jeseniènik
+ </TD>
+</TR>
+</TABLE>
+<br><p>
+<center><div id="vprasanje">Tukaj se bodo izpisovala vprašanja</div>
+<br>
+<button onclick="gumb1()" id="gumb1">Gumb 1</button>
+<button onclick="gumb2()" id="gumb2">Gumb 2</button>
+<button onclick="gumb3()" id="gumb3">Gumb 3</button>
+<button onclick="gumb4()" id="gumb4">Gumb 4</button>
+<br>
+<button onclick="zacni()"> Zaèni s kvizom</button>
+<br>
+<div id="toèke">Toèke:</div>
+<br>
+<br>
+<div id="konec"> </div>
+
+<script>
+    var vprasanja = [" Najveèja celina je:","Najdaljša reka je:","Najvišji slap je:"];
+    var pravilni_odgovori = [2,0,1];
+    var odgovori = [["Afrika","Evropa","Azija","Amerika"],["Nil","amazonka","Missisipi","Ind"],["Niagarski","Angelov slap","Periènik","Viktorijini"]];
+    var kviz_se_je_ze_zacel = false;
+    var tocke = 0;
+    var trenutno_vprasanje = 0;
+    function zacni(){
+        document.getElementById("vprasanje").innerHTML = vprasanja[0];
+        kviz_se_je_ze_zacel = true;
+        posodobi_stanje();
+    }
+    function gumb1(){
+        //console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 0){
+                //console.log("pravilno");
+                tocke += 1;
+            }
+            trenutno_vprasanje += 1;
+            posodobi_stanje();
+        }
+    }
+    function gumb2(){
+        //console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            //console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 1){
+                console.log("pravilno");
+                tocke += 1;
+            }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
+        }
+    }
+    function gumb3(){
+        //console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            //console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 2){
+                console.log("pravilno");
+                tocke += 1;
+            }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
+        }
+    }
+    function gumb4(){
+        //console.log("gumb1 kliknjen");
+        if (kviz_se_je_ze_zacel) {
+            //console.log("neki");
+            if (pravilni_odgovori[trenutno_vprasanje] == 3){
+                console.log("pravilno");
+                tocke += 1;
+            }
+            trenutno_vprasanje += 1;
+                posodobi_stanje();
+        }
+    }
+    function posodobi_stanje(){
+        document.getElementById("toèke").innerHTML = "Toèke: " + tocke;
+        //console.log(odgovori[trenutno_vprasanje][0]);
+        if(trenutno_vprasanje != vprasanja.length){
+            document.getElementById("vprasanje").innerHTML = vprasanja[trenutno_vprasanje];
+            document.getElementById("gumb1").innerHTML = odgovori[trenutno_vprasanje][0];
+            document.getElementById("gumb2").innerHTML = odgovori[trenutno_vprasanje][1];
+            document.getElementById("gumb3").innerHTML = odgovori[trenutno_vprasanje][2];
+            document.getElementById("gumb4").innerHTML = odgovori[trenutno_vprasanje][3];
+        }
+        if (trenutno_vprasanje == vprasanja.length){
+            document.getElementById("konec").innerHTML = "Bravo. Zakljuèil si kviz z osvojenimi " + tocke + " toèkami."
+        }
+    }
+</script>
+</center>
+
+</BODY>
+</HTML>
